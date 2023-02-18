@@ -176,7 +176,7 @@ def main():
                 highest = int(file.read())
                 file.close
 
-                print('HIGHEST_SCORE:  ', highest)
+                print(' PREVIOUS HIGHEST_SCORE:  ', highest)
 
                 if(score >= highest):
                     file = open('high_score.txt','w')
