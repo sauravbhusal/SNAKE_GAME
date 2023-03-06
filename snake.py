@@ -50,29 +50,28 @@ class snake(object):
 
         keys = pygame.key.get_pressed()
 
-        for key in keys:
-            if keys[pygame.K_LEFT]:
-                self.dirnx = -1
-                self.dirny = 0
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        if keys[pygame.K_LEFT]:
+            self.dirnx = -1
+            self.dirny = 0
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
             
-            elif keys[pygame.K_RIGHT]:
-                self.dirnx = 1
-                self.dirny = 0
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        elif keys[pygame.K_RIGHT]:
+            self.dirnx = 1
+            self.dirny = 0
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-            elif keys[pygame.K_UP]:
-                self.dirnx = 0
-                self.dirny = -1
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        elif keys[pygame.K_UP]:
+            self.dirnx = 0
+            self.dirny = -1
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-            elif keys[pygame.K_DOWN]:
-                self.dirnx = 0
-                self.dirny = 1
-                self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
+        elif keys[pygame.K_DOWN]:
+            self.dirnx = 0
+            self.dirny = 1
+            self.turns[self.head.pos[:]] = [self.dirnx, self.dirny]
 
-            elif keys[pygame.K_q]:
-                quit()    
+        elif keys[pygame.K_q]:
+            quit()    
 
         for i,c in enumerate(self.body):
             p = c.pos[:]
@@ -112,7 +111,7 @@ class snake(object):
             self.body.append(cube((tail.pos[0] + 1, tail.pos[1])))
         elif dx == 0 and dy == 1:
             self.body.append(cube((tail.pos[0], tail.pos[1] - 1)))
-        elif dx == -1 and dy == 0:
+        elif dx == 0 and dy == -1:
             self.body.append(cube((tail.pos[0], tail.pos[1] + 1))) 
 
         self.body[-1].dirnx = dx
