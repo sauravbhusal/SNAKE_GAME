@@ -156,8 +156,7 @@ def main():
     snack = cube(randomSnack(rows, s), color = (255,0,0))
     clock = pygame.time.Clock()
 
-    flag = True
-    while flag:
+    while True:
         pygame.time.delay(50)
         clock.tick(10)
         s.move()
